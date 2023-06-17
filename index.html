@@ -6,31 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>201-01 demo</title>
     <meta name="description" content="This is the description for the 201-01 demo" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
     <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        line-height: 1.6;
+        color: black;
+        background-color: white;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .container {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      header {
+        background-color: pink;
+        padding: 1rem 0;
+      }
+
+      .header-container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+
       h1 {
-        color: red;
+        color: darkcyan;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      ul li {
+        display: inline;
+      }
+
+      a {
+        text-decoration: none;
+        margin: 0 1rem;
+        color: darkcyan;
+      }
+
+      a:hover {
+        color: white;
+      }
+
+      @media (min-width: 640px) {
+        .header-container {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: baseline;
+        }
+        h1 {
+          margin-bottom: 0;
+        }
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>Hello World</h1>
+      <div class="header-container container">
+        <h1>My Page</h1>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <main>
-      <section>
-        <h2>Hero Heading</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt a possimus architecto cupiditate vero ut non
-          pariatur odio animi laudantium!
-        </p>
-      </section>
-    </main>
-    <footer>
-      <p>&#169; Tech Ed</p>
-      <p>please check the change</p>
-    </footer>
+    <main></main>
+    <footer></footer>
     <script>
       console.log("I here by declare that this log has logged!");
+
+      let user;
+      let myFavColor;
+
+      alert("Hi, i'm Chris, welcome to my site");
+
+      function userName() {
+        user = prompt("Please tell me your name so we can get to know one another.");
+        alert("Welcome to my site " + user);
+        console.log(user);
+      }
+
+      userName();
+
+      let color;
+
+      function favColor() {
+        color = prompt(user + " , what is your fav color?");
+        console.log(color);
+        if (color === "red") {
+          myFavColor = "green";
+        } else if (color === "blue") {
+          myFavColor = "orange";
+        } else {
+          myFavColor = "Tomato";
+        }
+
+        alert("Nice, " + color + " is a nice color. My favourite Colour is " + myFavColor);
+      }
+
+      favColor();
     </script>
   </body>
 </html>
